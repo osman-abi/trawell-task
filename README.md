@@ -7,13 +7,13 @@ swagger for api documentation.
 
 After clone this respository, follow below sequences
 
-'''bash
+```bash
 python3 -m venv venv
 
 source venv/bin/activate
 
 pip install -r requirements.txt
-'''
+```
 
 After installation all requirements, you can run this app.
 
@@ -21,7 +21,7 @@ After installation all requirements, you can run this app.
 
 As you can see, there is a 'VERSION' variable in settings.py file. Database configurations:
 
-'''python
+```python
 if VERSION == 1:
     DATABASES = {
             'default': {
@@ -40,7 +40,7 @@ else:
             "PORT": "5432",
         }
 }
-'''
+```
 
 If you wanna use sqlite3 database you have to initialize '1' to VERSION variable. Otherwise you should change DB_NAME, DB_PASSWORD, DB_USER in your local machine (PGAdmin) for postgreSQL
 
@@ -49,26 +49,26 @@ If you wanna use sqlite3 database you have to initialize '1' to VERSION variable
 First of all, you need to login for PUT, DELETE, UPDATE methods. Data you sent should be such as:
 http://127.0.0.1:8000/api/login/
 
-'''bash
+```bash
 {
     "email":"xxxxxx@xxxxxx.com",
     "password":"xxxxxx"
 }
-'''
+```
 So, this API responses 'access_token'. You need to use this token in the authorization side, via Bearer.
 
-'''bash
+```bash
 {
     'Authorization':'Bearer access_token'
 }
-'''
+```
 
 
 We have the API url : http://127.0.0.1:8000/api/create/. Your json data have to has 'key' variable. This 'key' variable should contains either 'customer' or 'passport'. If 'key' is customer then Customer model will be created, otherwise Passport model will be created:
 
 ### For create Customer json data should be such as below:
 
-'''
+```
 {
     "key":"customer",
     "name":"test_name_3",
@@ -76,7 +76,7 @@ We have the API url : http://127.0.0.1:8000/api/create/. Your json data have to 
     "email":"test-3@email.com",
     "phone":"xxxxxxxx"
 }
-'''
+```
 
 ### For create Passport, you need to use form-data in postman:
 
