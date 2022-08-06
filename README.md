@@ -1,4 +1,4 @@
-# TRAELL TASK
+# TRAWELL TASK
 
 In this task we use Django, Django REST Framework, JWT Authentication, python stories module,
 swagger for api documentation.
